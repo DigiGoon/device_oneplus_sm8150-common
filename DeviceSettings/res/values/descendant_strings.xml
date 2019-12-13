@@ -21,7 +21,7 @@
     <string name="hbm_mode_title">High brightness mode</string>
     <string name="wide_color_mode_title">Wide Color mode</string>
     <string name="dci_mode_summary"></string>
-    <string name="dci_mode_title">DCI-P3 wide colour gamut mode</string>
+    <string name="dci_mode_title_new">DCI-P3 mode</string>
     <string name="Night_mode_summary"></string>
     <string name="Night_mode_title">Night mode</string>
     <string name="panel_category_title">Panel modes</string>
@@ -32,6 +32,7 @@
     <string name="dc_mode_title">DC-Dimming</string>
     <string name="tile_hbm_mode">High brightness modes</string>
     <string name="tile_dc_mode">DC-Dimming</string>
+    <string name="panel_mode_info">Disable panel mode requires reboot.</string>
 
     <!-- Touchscreen Gestures -->
     <string name="screen_gestures_panel_title">Gestures</string>
