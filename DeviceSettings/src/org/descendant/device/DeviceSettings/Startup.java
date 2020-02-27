@@ -27,12 +27,13 @@ import androidx.preference.PreferenceManager;
 
 public class Startup extends BroadcastReceiver {
 
+    private boolean mHBM = false;
     private void restore(String file, boolean enabled) {
         if (file == null) {
             return;
         }
         if (enabled) {
-            Utils.writeValue(file, "1");
+            Utils.writeValue(file, mHBM ? "5" : "1");
         }
     }
 
@@ -50,26 +51,32 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
 
         if (enabled) {
+        mHBM = false;
         restore(SRGBModeSwitch.getFile(), enabled);
 		}
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
         if (enabled) {
+        mHBM = true;
         restore(HBMModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
         if (enabled) {
+        mHBM = false;
         restore(DCModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
         if (enabled) {
+        mHBM = false;
         restore(DCIModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
         if (enabled) {
+        mHBM = false;
         restore(NightModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
         if (enabled) {
+        mHBM = false;
         restore(WideColorModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
