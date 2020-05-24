@@ -1,2 +1,4 @@
 allow system_app sysfs:file {read write};
 allow system_app sysfs_fod:file {read write};
+allow system_app hal_display_hwservice:hwservice_manager find;
+binder_call(system_app, hal_display_default)
