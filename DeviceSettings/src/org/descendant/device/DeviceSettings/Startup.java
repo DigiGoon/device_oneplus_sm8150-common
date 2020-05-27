@@ -84,6 +84,7 @@ public class Startup extends BroadcastReceiver {
         mHBM = false;
         restore(NightModeSwitch.getFile(), enabled);
         }
+        Utils.enableService(context);
         VibratorStrengthPreference.restore(context);
     }
 }

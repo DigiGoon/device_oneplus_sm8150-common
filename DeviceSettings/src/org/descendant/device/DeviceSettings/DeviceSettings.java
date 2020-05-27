@@ -21,8 +21,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
+import android.content.Context;
 import android.content.res.Resources;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -38,6 +40,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
@@ -51,6 +54,7 @@ public class DeviceSettings extends PreferenceFragment
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
+    public static final String KEY_HBM_AUTOBRIGHTNESS_SWITCH = "hbm_autobrightness";
     public static final String KEY_DC_SWITCH = "dc";
     public static final String KEY_DCI_SWITCH = "dci";
     public static final String KEY_NIGHT_SWITCH = "night";
@@ -65,6 +69,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private static TwoStatePreference mHBMModeSwitch;
+    private static TwoStatePreference mHBMAutobrightnessSwitch;
     private static TwoStatePreference mDCModeSwitch;
     private static TwoStatePreference mRefreshRate;
     private static SwitchPreference mAutoRefreshRate;
@@ -103,6 +108,10 @@ public class DeviceSettings extends PreferenceFragment
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
 
+        mHBMAutobrightnessSwitch = (TwoStatePreference) findPreference(KEY_HBM_AUTOBRIGHTNESS_SWITCH);
+        mHBMAutobrightnessSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false));
+        mHBMAutobrightnessSwitch.setOnPreferenceChangeListener(this);
+
         if (getResources().getBoolean(R.bool.config_deviceHasHighRefreshRate)) {
             mAutoRefreshRate = (SwitchPreference) findPreference(KEY_AUTO_REFRESH_RATE);
             mAutoRefreshRate.setChecked(AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
@@ -128,8 +137,27 @@ public class DeviceSettings extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
-        return true;
+        if (preference == mTopKeyPref) {
+            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mMiddleKeyPref) {
+            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mBottomKeyPref) {
+            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mHBMAutobrightnessSwitch) {
+            Boolean enabled = (Boolean) newValue;
+            SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+            prefChange.putBoolean(KEY_HBM_AUTOBRIGHTNESS_SWITCH, enabled).commit();
+            Utils.enableService(getContext());
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isHBMAutobrightnessEnabled(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(DeviceSettings.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false);
     }
 
     @Override
