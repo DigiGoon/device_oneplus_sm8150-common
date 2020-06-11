@@ -30,8 +30,8 @@
 
         <SwitchPreference
             android:key="hbm_autobrightness"
+            android:icon="@drawable/ic_autohbm_mode_icon"
             android:summary="@string/hbm_autobrightness_summary"
-            android:icon="@drawable/rr_hbm_icon"
             android:title="@string/hbm_autobrightness_title" />
 
         <Preference
