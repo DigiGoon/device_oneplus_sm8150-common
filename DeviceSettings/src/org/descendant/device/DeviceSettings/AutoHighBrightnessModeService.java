@@ -91,7 +91,7 @@ public class AutoHighBrightnessModeService extends Service {
                 if (lux > 6500.0f) {
                     Utils.writeValue(HBM_BRIGHTNESS_FILE, String.valueOf((int)getHBMBrightness(lux)));
                     mAutoHBMActive = true;
-                } else if (lux < 6500.0f && mAutoHBMActive && !mIsAutomaticBrightnessEnabled) {
+                } else if (lux < 20000.0f && mAutoHBMActive && !mIsAutomaticBrightnessEnabled) {
                     Utils.writeValue(HBM_BRIGHTNESS_FILE, "0");
                     Utils.writeValue(HBM_FILE, "0");
                     mAutoHBMActive = false;
