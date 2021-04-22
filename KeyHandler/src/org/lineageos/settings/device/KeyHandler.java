@@ -18,7 +18,6 @@ package org.lineageos.settings.device;
 
 import android.content.Context;
 import android.media.AudioManager;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.KeyEvent;
 
@@ -65,9 +64,10 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private void doHapticFeedback() {
-        if (mVibrator != null && mVibrator.hasVibrator()) {
-            mVibrator.vibrate(VibrationEffect.createOneShot(50,
-                    VibrationEffect.DEFAULT_AMPLITUDE));
+        if (mVibrator == null || !mVibrator.hasVibrator()) {
+            return;
         }
+
+        mVibrator.vibrate(50);
     }
 }
