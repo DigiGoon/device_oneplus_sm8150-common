@@ -79,10 +79,6 @@ public class Startup extends BroadcastReceiver {
         mHBM = false;
         restore(WideColorModeSwitch.getFile(), enabled);
         }
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
-        if (enabled) {
-            context.startService(new Intent(context, FPSInfoService.class));
-        }
         VibratorStrengthPreference.restore(context);
     }
 }
