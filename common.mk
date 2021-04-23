@@ -428,7 +428,8 @@ PRODUCT_COPY_FILES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.oneplus_msmnile
+    vendor.lineage.touch@1.0-service.oneplus_msmnile \
+    TouchGestures
 
 # tri-state key
 PRODUCT_PACKAGES += \

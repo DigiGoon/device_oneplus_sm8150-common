@@ -33,6 +33,9 @@
     <string name="tile_hbm_mode">High brightness modes</string>
     <string name="tile_dc_mode">DC-Dimming</string>
 
+    <!-- Touchscreen Gestures -->
+    <string name="screen_gestures_panel_title">Gestures</string>
+
     <!-- Refresh rate -->
     <string name="refresh_title">Screen refresh</string>
     <string name="tile_refresh_rate">Screen refresh rate</string>
