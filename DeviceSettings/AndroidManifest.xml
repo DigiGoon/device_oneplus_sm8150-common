@@ -24,6 +24,8 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <protected-broadcast android:name="org.descendant.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
+
     <uses-sdk
         android:minSdkVersion="28"
         android:targetSdkVersion="29" />
