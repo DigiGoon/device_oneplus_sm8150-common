@@ -61,6 +61,9 @@
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
+    <!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+
     <!-- Whether device has an alert slider. -->
     <bool name="config_hasAlertSlider">true</bool>
 
