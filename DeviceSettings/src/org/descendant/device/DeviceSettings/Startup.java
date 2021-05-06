@@ -27,16 +27,6 @@ import androidx.preference.PreferenceManager;
 
 public class Startup extends BroadcastReceiver {
 
-    private boolean mHBM = false;
-    private void restore(String file, boolean enabled) {
-        if (file == null) {
-            return;
-        }
-        if (enabled) {
-            Utils.writeValue(file, mHBM ? "5" : "1");
-        }
-    }
-
     private void restore(String file, String value) {
         if (file == null) {
             return;
@@ -48,41 +38,6 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-        if (enabled) {
-            mHBM = false;
-            Utils.setDisplayMode(16, 0);
-            Utils.setDisplayMode(17, 0);
-            Utils.setDisplayMode(18, 0);
-            Utils.setDisplayMode(20, 0);
-            Utils.setDisplayMode(21, 0);
-            Utils.setDisplayMode(20, 1);
-        }
-
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
-        if (enabled) {
-            mHBM = true;
-            restore(HBMModeSwitch.getFile(), enabled);
-        }
-
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DC_SWITCH, false);
-        if (enabled) {
-            mHBM = false;
-            restore(DCModeSwitch.getFile(), enabled);
-        }
-
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-        if (enabled) {
-            mHBM = false;
-            Utils.setDisplayMode(16, 0);
-            Utils.setDisplayMode(17, 0);
-            Utils.setDisplayMode(18, 0);
-            Utils.setDisplayMode(20, 0);
-            Utils.setDisplayMode(21, 0);
-            Utils.setDisplayMode(21, 1);
-        }
-        Utils.enableService(context);
         VibratorStrengthPreference.restore(context);
     }
 }
