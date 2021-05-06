@@ -50,14 +50,6 @@ import org.descendant.device.DeviceSettings.Constants;
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-
-    private static final String KEY_CATEGORY_GRAPHICS = "graphics";
-    public static final String KEY_SRGB_SWITCH = "srgb";
-    public static final String KEY_HBM_SWITCH = "hbm";
-    public static final String KEY_HBM_AUTOBRIGHTNESS_SWITCH = "hbm_autobrightness";
-    public static final String KEY_DC_SWITCH = "dc";
-    public static final String KEY_DCI_SWITCH = "dci";
-
     private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
     public static final String KEY_AUTO_REFRESH_RATE = "auto_refresh_rate";
@@ -67,9 +59,6 @@ public class DeviceSettings extends PreferenceFragment
 
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
-    private static TwoStatePreference mHBMModeSwitch;
-    private static TwoStatePreference mHBMAutobrightnessSwitch;
-    private static TwoStatePreference mDCModeSwitch;
     private static TwoStatePreference mRefreshRate;
     private static SwitchPreference mAutoRefreshRate;
     private ListPreference mTopKeyPref;
@@ -97,20 +86,6 @@ public class DeviceSettings extends PreferenceFragment
         mBottomKeyPref.setValueIndex(Constants.getPreferenceInt(getContext(), Constants.NOTIF_SLIDER_BOTTOM_KEY));
         mBottomKeyPref.setOnPreferenceChangeListener(this);
 
-        mDCModeSwitch = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
-        mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());
-        mDCModeSwitch.setChecked(DCModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mDCModeSwitch.setOnPreferenceChangeListener(new DCModeSwitch());
-
-        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
-        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
-        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
-
-        mHBMAutobrightnessSwitch = (TwoStatePreference) findPreference(KEY_HBM_AUTOBRIGHTNESS_SWITCH);
-        mHBMAutobrightnessSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false));
-        mHBMAutobrightnessSwitch.setOnPreferenceChangeListener(this);
-
         if (getResources().getBoolean(R.bool.config_deviceHasHighRefreshRate)) {
             mAutoRefreshRate = (SwitchPreference) findPreference(KEY_AUTO_REFRESH_RATE);
             mAutoRefreshRate.setChecked(AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
@@ -136,27 +111,8 @@ public class DeviceSettings extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mTopKeyPref) {
-            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
-            return true;
-        } else if (preference == mMiddleKeyPref) {
-            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
-            return true;
-        } else if (preference == mBottomKeyPref) {
-            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
-            return true;
-        } else if (preference == mHBMAutobrightnessSwitch) {
-            Boolean enabled = (Boolean) newValue;
-            SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-            prefChange.putBoolean(KEY_HBM_AUTOBRIGHTNESS_SWITCH, enabled).commit();
-            Utils.enableService(getContext());
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean isHBMAutobrightnessEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(DeviceSettings.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false);
+        Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
+        return true;
     }
 
     @Override
