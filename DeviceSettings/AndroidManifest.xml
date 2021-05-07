@@ -33,12 +33,14 @@
     <application
         android:icon="@drawable/ic_settings_device"
         android:label="@string/device_title"
+        android:summary="@string/device_summary"
         android:theme="@style/AppTheme">
 
         <!-- Device Settings -->
         <activity
             android:name=".DeviceSettingsActivity"
-            android:label="@string/device_title">
+            android:label="@string/device_title"
+            android:summary="@string/device_summary">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
