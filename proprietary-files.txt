@@ -97,14 +97,39 @@ system_ext/lib/libqvrcamera_client.qti.so
 system_ext/lib/libqvrservice.so
 system_ext/lib/libqvr_eyetracking_plugin.so
 system_ext/lib64/libqvrcamera_client.qti.so
+vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
 vendor/bin/hw/vendor.oneplus.hardware.camera@1.0-service
 vendor/bin/hw/vendor.oneplus.hardware.CameraMDMHIDL@1.0-service
 vendor/bin/vl53l1_daemon_main
+vendor/etc/init/android.hardware.camera.provider@2.4-service_64.rc
 vendor/etc/init/vendor.oneplus.hardware.camera@1.0-service.rc
 vendor/etc/init/vendor.oneplus.hardware.CameraMDMHIDL@1.0-service.rc
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
+vendor/lib/android.hardware.camera.provider@2.4-external.so
+vendor/lib/android.hardware.camera.provider@2.4-legacy.so
+vendor/lib/camera.device@1.0-impl.so
+vendor/lib/camera.device@3.2-impl.so
+vendor/lib/camera.device@3.3-impl.so
+vendor/lib/camera.device@3.4-external-impl.so
+vendor/lib/camera.device@3.4-impl.so
+vendor/lib/camera.device@3.5-external-impl.so
+vendor/lib/camera.device@3.5-impl.so
+vendor/lib/camera.device@3.6-external-impl.so
 vendor/lib/libopenvx.so
 vendor/lib/libswregistrationalgo.so
+vendor/lib/vendor.qti.hardware.camera.device@1.0.so
+vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
 vendor/lib64/hw/com.qti.chi.override.so
+vendor/lib64/android.hardware.camera.provider@2.4-external.so
+vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
+vendor/lib64/camera.device@1.0-impl.so
+vendor/lib64/camera.device@3.2-impl.so
+vendor/lib64/camera.device@3.3-impl.so
+vendor/lib64/camera.device@3.4-external-impl.so
+vendor/lib64/camera.device@3.4-impl.so
+vendor/lib64/camera.device@3.5-external-impl.so
+vendor/lib64/camera.device@3.5-impl.so
+vendor/lib64/camera.device@3.6-external-impl.so
 vendor/lib64/goldResult.bin
 vendor/lib64/lib_bokehlib.so
 vendor/lib64/lib_oneplus_watermark.so
@@ -159,6 +184,7 @@ vendor/lib64/libvl53l1_daemon.so
 vendor/lib64/sensors.hal.tof.so
 vendor/lib64/vendor.oneplus.hardware.camera@1.0.so
 vendor/lib64/vendor.oneplus.hardware.CameraMDMHIDL@1.0.so
+vendor/lib64/vendor.qti.hardware.camera.device@1.0.so
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
