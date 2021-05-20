@@ -340,6 +340,9 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
+# OnePlus apps
+$(call inherit-product, vendor/oneplus/apps/config.mk)
+
 # OMX
 PRODUCT_PACKAGES += \
     libavservices_minijail \
