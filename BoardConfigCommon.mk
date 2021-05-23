@@ -12,18 +12,15 @@ VENDOR_PATH := device/oneplus/sm8150-common
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a76
+TARGET_CPU_VARIANT := cortex-a55
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a76
-
-TARGET_USES_64_BIT_BINDER := true
+TARGET_2ND_CPU_VARIANT := cortex-a55
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
@@ -34,20 +31,10 @@ BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=7 androidboot.usbcontroller=a600000.dwc3  kpti=off
 BOARD_KERNEL_CMDLINE += androidboot.vbmeta.avb_version=1.0
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := proton
-TARGET_KERNEL_CONFIG := gulch_defconfig
-TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
-
-# Platform
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := msmnile
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
+KERNEL_DEFCONFIG := vendor/sm8150-perf_defconfig
 
 # Properties
 TARGET_ODM_PROP += $(VENDOR_PATH)/odm.prop
@@ -88,10 +75,6 @@ USE_XML_AUDIO_POLICY_CONF := 1
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth/include
 TARGET_USE_QTI_BT_STACK := true
 
-# Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-
 # FOD
 TARGET_SURFACEFLINGER_FOD_LIB := //$(VENDOR_PATH):libfod_extension.oneplus_msmnile
 
@@ -105,18 +88,16 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
-# DRM
-TARGET_ENABLE_MEDIADRM_64 := true
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
-
 # Fingerprint
 SOONG_CONFIG_NAMESPACES += ONEPLUS_MSMNILE_FOD
 SOONG_CONFIG_ONEPLUS_MSMNILE_FOD := POS_X POS_Y SIZE
 
 # HIDL
-DEVICE_MATRIX_FILE += $(VENDOR_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(VENDOR_PATH)/oneplus_vendor_framework_compatibility_matrix.xml
+
+DEVICE_MATRIX_FILE += device/qcom/common/compatibility_matrix.xml
+
 DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest.xml
 ODM_MANIFEST_FILES += $(VENDOR_PATH)/manifest-qva.xml
 
@@ -161,9 +142,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-05-01
-
-# SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/public

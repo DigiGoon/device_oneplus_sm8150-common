@@ -1,2 +1,0 @@
-# Allow bluetooth to check incremental prop
-get_prop(bluetooth, incremental_prop)

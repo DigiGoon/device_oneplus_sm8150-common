@@ -1,0 +1,17 @@
+# Allow binder communication with hal_fingerprint
+binder_call(vendor_fod, hal_fingerprint)
+
+# Allow binder communication with hal_display_default
+binder_call(vendor_fod, hal_display_default)
+
+# Allow binder communication with hal_fingerprint_default
+binder_call(vendor_fod, hal_fingerprint_default)
+
+# Allow vendor_fod to hal_display_hwservice
+allow vendor_fod hal_display_hwservice:hwservice_manager find;
+
+# Allow vendor_fod to hal_oneplus_fingerprint_hwservice
+allow vendor_fod hal_oneplus_fingerprint_hwservice:hwservice_manager find;
+
+# Allow vendor_fod to read and write to sysfs_fod
+allow vendor_fod sysfs_fod:file rw_file_perms;

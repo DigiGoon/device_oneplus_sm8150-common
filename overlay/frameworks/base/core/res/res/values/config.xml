@@ -268,15 +268,6 @@
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
-    <!-- Control the behavior when the user long presses the home button.
-        0 - Nothing
-        1 - Recent apps view in SystemUI
-        2 - Launch assist intent
-        This needs to match the constants in
-        policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-    -->
-    <integer name="config_longPressOnHomeBehavior">2</integer>
-
     <!-- Flag indicating if device supports EAP SIM, AKA, AKA' -->
     <bool name="config_eap_sim_based_auth_supported">true</bool>
 
@@ -423,11 +414,6 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
-
-    <!-- SQLite -->
-    <string name="db_default_journal_mode">MEMORY</string>
-    <string name="db_default_sync_mode">OFF</string>
-    <string name="db_wal_sync_mode">OFF</string>
 
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">

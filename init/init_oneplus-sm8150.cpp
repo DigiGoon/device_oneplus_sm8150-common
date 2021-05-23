@@ -50,17 +50,6 @@ void property_override(char const prop[], char const value[]) {
     __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[]) {
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-}
-
-void property_override_multi(char const system_prop[], char const vendor_prop[],char const bootimage_prop[], char const value[]) {
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-    property_override(bootimage_prop, value);
-}
-
 void load_dalvikvm_properties() {
   struct sysinfo sys;
   sysinfo(&sys);
@@ -205,11 +194,9 @@ void vendor_load_properties() {
     }
 
     property_override("vendor.boot.prj_version", std::to_string(prj_version).c_str());
-    property_override_dual("vendor.rf.version", "vendor.boot.rf_version", std::to_string(rf_version).c_str());
+    property_override("vendor.boot.rf_version", std::to_string(rf_version).c_str());
+    property_override("vendor.rf.version", std::to_string(rf_version).c_str());
 
   // dalvikvm props
   load_dalvikvm_properties();
-
-  // fingerprint
-  property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint","ro.bootimage.build.fingerprint", "google/coral/coral:11/RQ2A.210505.002/7246365:user/release-keys");
 }
