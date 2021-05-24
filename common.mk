@@ -17,11 +17,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aospa
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    AOSPAOnePlusSM8150Frameworks \
+    AOSPAOnePlusSM8150SystemUI \
+    OnePlusSM8150Frameworks \
+    OnePlusSM8150SystemUI
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -317,6 +317,7 @@ TARGET_BOARD_PLATFORM := msmnile
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     bt \
+    overlay \
     perf \
     telephony \
     usb
@@ -386,10 +387,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-# WiFi
-PRODUCT_PACKAGES += \
-    WifiResCommon
 
 # WiFi Display
 PRODUCT_PACKAGES += \
