@@ -700,14 +700,6 @@ vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 # Perf
 vendor/etc/powerhint.xml
 
-# Power-off alarm - from LA.UM.9.1.r1-09600-SMxxx0.0
--product/app/PowerOffAlarm/PowerOffAlarm.apk|bc906abd03e4a243201dde626b6580fd8a4f73ce
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|8837c93af35835116be98451040cf7843947198c
-vendor/bin/power_off_alarm|73f5fc2ee9436512a02e80890608722cd7643ab3
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|d00a0d1670efd97273bc019281cdb24b97611e6d
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|101eacc45dd5cf36c2b76f9e0aea52fb6424ddcc
-
 # QCC - from LA.UM.9.1.r1-09600-SMxxx0.0
 vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service|b60b09fa92e8b400129c021c6b51c0c63dbf1edd
 vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc|afeb332a4750a11587658fcc9a75a27f63bbccdd
