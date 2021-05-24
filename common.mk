@@ -256,13 +256,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gf_input.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gf_input.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
-# IPACM
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
-
 # IPC router config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -330,16 +323,8 @@ TARGET_BOARD_PLATFORM := msmnile
 
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
+    telephony \
     usb
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5 \
-    android.hardware.radio.config@1.2 \
-    android.hardware.radio.deprecated@1.0 \
-    libprotobuf-cpp-full \
-    librmnetctl \
-    libxml2
 
 # Vendor libstdc++
 PRODUCT_PACKAGES += \
@@ -375,10 +360,6 @@ PRODUCT_SOONG_NAMESPACES += \
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
-
-# Telephony
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
 
 # tri-state key
 PRODUCT_PACKAGES += \
