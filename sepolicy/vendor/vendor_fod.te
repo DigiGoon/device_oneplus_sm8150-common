@@ -13,5 +13,6 @@ allow vendor_fod hal_display_hwservice:hwservice_manager find;
 # Allow vendor_fod to hal_oneplus_fingerprint_hwservice
 allow vendor_fod hal_oneplus_fingerprint_hwservice:hwservice_manager find;
 
-# Allow vendor_fod to read and write to sysfs_fod
+# Allow vendor_fod to read and write to sysfs_{aod,fod}
+allow vendor_fod sysfs_aod:file rw_file_perms;
 allow vendor_fod sysfs_fod:file rw_file_perms;
