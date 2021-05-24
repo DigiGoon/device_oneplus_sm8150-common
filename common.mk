@@ -323,6 +323,7 @@ TARGET_BOARD_PLATFORM := msmnile
 
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
+    perf \
     telephony \
     usb
 
@@ -347,10 +348,6 @@ PRODUCT_PACKAGES += \
     als_correction_service.oneplus_msmnile \
     android.hardware.sensors@2.0-service.oneplus_msmnile \
     libsensorndkbridge
-
-# Servicetracker
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.2.vendor:64
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
