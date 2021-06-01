@@ -3,6 +3,7 @@
 # ADSP
 vendor/bin/adsprpcd
 vendor/etc/init/vendor.qti.adsprpc-service.rc
+vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib/vendor.qti.hardware.dsp@1.0.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
@@ -480,6 +481,7 @@ vendor/etc/init/ims_rtp_daemon.rc|06510e936890f51aeb76f2cf3ed5dbe45e67ac20
 vendor/etc/init/imsdatadaemon.rc|29face37c174aebcd1358f7d7ad0bd4baf83063b
 vendor/etc/init/imsqmidaemon.rc|dda16d842b7c65296e97bc9921b723a43b152ba3
 vendor/etc/init/imsrcsd.rc|2dc42ff6e4b6dd389bd3bc9a7af30dec2f1a45df
+vendor/etc/seccomp_policy/imsrtp.policy|7ea8b4012da7bde98fc91bd882185b32784793cc
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so|2a80fc611eecc1e6cc6a74464210f1a4ae545e37
 vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so|088f5c464198de4a453cceed76b8be94b0dd4460
 vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so|56585b01495e13dea93f36d9533bc9659893f088
@@ -564,6 +566,8 @@ system_ext/lib/libmmparser_lite.so
 system_ext/lib64/libmmosal.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
+vendor/etc/seccomp_policy/codec2.vendor.base.policy
+vendor/etc/seccomp_policy/codec2.vendor.ext.policy
 vendor/etc/system_properties.xml
 vendor/lib/libqcodec2.so
 vendor/lib64/libmmosal.so
@@ -704,6 +708,7 @@ vendor/bin/irsc_util|85c4a84f264521868e812ad6e48d049494fed66b
 vendor/bin/qrtr-cfg|88d372185a39b70ccfa4b1cf72e414d398331b51
 vendor/bin/qrtr-lookup|551e1ff1efc77de6897b9cf79e2b647c49f169ba
 vendor/bin/qrtr-ns|bfdb143e01eb16475ddc92523ead81f112b6d0c4
+vendor/etc/seccomp_policy/qti-systemd.policy|40bf52fb50a94eb8325beefe1927d9ba155fb02a
 vendor/lib/libdiag.so|e841a130ca24e619798b70fdb9c47254c589bcf2
 vendor/lib/libidl.so|303d2dab96b0344f47da3638fdf7ed25789d95f6
 vendor/lib/libmdmdetect.so|981fd718beebdae1f6ef7e15a479996dbc926f9d
@@ -754,6 +759,7 @@ vendor/bin/qtigetprop|4d0e9e9adb56cdbe4562c2fa54416aa5eb2968e8
 vendor/bin/qtisetprop|232b6b778234ecf9806f4b9d9a4de9c28b70c108
 vendor/etc/init/init-qcril-data.rc|890ac72fa49d0e52a263175a7b5b550539287800
 vendor/etc/init/qcrild.rc|17cf4934bf443cf6469d8b3ff622eeb0e4a0aac6
+vendor/etc/seccomp_policy/atfwd@2.0.policy|74fdb7d47bdb6d0cb06b13701a96a76c9171ab5d
 vendor/lib64/deviceInfoServiceModule.so|9099149ed539c45354c896181857b717e6fe2b3e
 vendor/lib64/liblqe.so|1ec31a9b81a00c546988b45f517616cc38222314
 vendor/lib64/libqcrilFramework.so|6a2a7a4e375937569f91e858f45c88c6788c8cd1
