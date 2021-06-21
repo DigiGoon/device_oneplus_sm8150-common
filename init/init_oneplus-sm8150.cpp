@@ -113,10 +113,6 @@ void vendor_load_properties() {
           /* Global / US Unlocked */
           property_override("ro.product.model", "GM1905");
           break;
-        default:
-          /* Generic */
-          property_override("ro.product.model", "GM1905");
-          break;
       }
     break;
   }
