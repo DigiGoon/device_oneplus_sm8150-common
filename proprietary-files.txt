@@ -375,40 +375,40 @@ vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
-# Graphics (Adreno)
--vendor/app/com.qualcomm.qti.gpudrivers.msmnile.api30/com.qualcomm.qti.gpudrivers.msmnile.api30.apk;PRESIGNED
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libC2D2.so
-vendor/lib/libc2d30_bltlib.so
-vendor/lib/libCB.so
-vendor/lib/libgpudataproducer.so
-vendor/lib/libgsl.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/libOpenCL.so
-vendor/lib/libVkLayer_q3dtools.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
-vendor/lib64/egl/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libCB.so
-vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libVkLayer_q3dtools.so
+# Graphics (Adreno) - from LA.UM.9.1.r1-09600-SMxxx0.0
+-vendor/app/com.qualcomm.qti.gpudrivers.msmnile.api30/com.qualcomm.qti.gpudrivers.msmnile.api30.apk;PRESIGNED|48806ee3413a591ab35a262b3c0f88fd8ea85fbf
+vendor/lib/egl/eglSubDriverAndroid.so|be2f5c4b174bdfaabbe25adde568b72775ef4856
+vendor/lib/egl/libEGL_adreno.so|fb1d14334bf1730a9cffd76a7b22b45ceb0e67ce
+vendor/lib/egl/libGLESv1_CM_adreno.so|715f3463528f1e74ffa02627ee5916a09e0748f5
+vendor/lib/egl/libGLESv2_adreno.so|3d5464d3381c2b3e4d27d6a6af31035c03fec5a1
+vendor/lib/egl/libq3dtools_adreno.so|9ec9c053592e58be935e8ae5e0a9d362c101773a
+vendor/lib/egl/libq3dtools_esx.so|9867de833bfe301c74f16e85727c4699c82f12ca
+vendor/lib/libadreno_utils.so|51d2e395928e06e5f49e38d5962b29c71dce3e23
+vendor/lib/libC2D2.so|91f015cad79024fdbb6a5603cce48693e58a4510
+vendor/lib/libc2d30_bltlib.so|71703a543760e40ba26cde07c2d41416cc9331ec
+vendor/lib/libCB.so|0d55143f6e046f37dc299495493d810d224dbda4
+vendor/lib/libgpudataproducer.so|4548fb464095f9e81d6598a625c56b8f5bf4519f
+vendor/lib/libgsl.so|4d39e5a5f235a1086ac1f10e9071ad0a1733387c
+vendor/lib/libllvm-glnext.so|e5355087062b4ffbb1e1d570b373119b7c08a999
+vendor/lib/libllvm-qcom.so|68a9e0594044ae947a9892d3d9e92c30de5b6990
+vendor/lib/libOpenCL.so|7e06bf784e1c4e1b89dbe811b038efcc7c1221a0
+vendor/lib/libVkLayer_q3dtools.so|29b8ffcd19de5dc3b662b6a94a0583a05dd6dd99
+vendor/lib64/egl/eglSubDriverAndroid.so|4ea16e43015194042ac9b93a38ff77bfcfb9e514
+vendor/lib64/egl/libEGL_adreno.so|a663fb5631a29bd4deda59006ebe0cb7f507face
+vendor/lib64/egl/libGLESv1_CM_adreno.so|0a2a648ca2dcd887ea62860bbfa2ef397f01d42d
+vendor/lib64/egl/libGLESv2_adreno.so|430431fc424a9df01420a302b85b0d77e49c9e2a
+vendor/lib64/egl/libq3dtools_adreno.so|189b9c3d400c6a98c87582b8df0910530cba6d44
+vendor/lib64/egl/libq3dtools_esx.so|369be2b63d588d6ca58e5e37f112d77439592510
+vendor/lib64/libadreno_utils.so|ee13afa147a0632741c1e89bc4efc56c974f6960
+vendor/lib64/libC2D2.so|175115cc36fd471f9eb83af76be21b5f602b9460
+vendor/lib64/libc2d30_bltlib.so|b7c7bbc41f317833927d9bf75fbf9b411dd63a96
+vendor/lib64/libCB.so|6a0c09e07359b2bd5c7462619e87e8387b1ba3f7
+vendor/lib64/libgpudataproducer.so|0120db18ee03d3fcaa7e922810ae533823c11aca
+vendor/lib64/libgsl.so|3a3ea2ca34427b73c43939821c9858c8a6e60dd1
+vendor/lib64/libllvm-glnext.so|5d3f9aa189dbc529bd961e7e3ab69ca11c3fdadd
+vendor/lib64/libllvm-qcom.so|2005348963b8a35a449372c91e0d7bf7d32120f6
+vendor/lib64/libOpenCL.so|5aecd08fbf5470c2ff467f2e54fb513c592d6272
+vendor/lib64/libVkLayer_q3dtools.so|29b6a0d31b3e094a5b1f6fce5191fb06f31041ea
 
 # Graphics (Adreno firmware)
 vendor/firmware/a630_gmu.bin
@@ -420,9 +420,9 @@ vendor/firmware/a640_zap.b02
 vendor/firmware/a640_zap.elf
 vendor/firmware/a640_zap.mdt
 
-# Graphics (Vulkan)
-vendor/lib/hw/vulkan.adreno.so
-vendor/lib64/hw/vulkan.adreno.so
+# Graphics (Vulkan) - from LA.UM.9.1.r1-09600-SMxxx0.0
+vendor/lib/hw/vulkan.adreno.so|4ee2d8037d93a4e520b0d2d63b7962261783ad81
+vendor/lib64/hw/vulkan.adreno.so|cd82adac413c043a7283828c8926f1cbadf22f3a
 
 # GNSS
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
