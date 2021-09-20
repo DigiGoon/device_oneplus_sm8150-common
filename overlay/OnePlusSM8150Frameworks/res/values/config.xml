@@ -213,4 +213,6 @@
     <integer-array name="config_availableColorModes">
     </integer-array>
 
+    <!-- If device supports pickup/lift gesture -->
+    <bool name="config_dozePulsePickup">true</bool>
 </resources>
