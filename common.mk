@@ -151,12 +151,8 @@ PRODUCT_PACKAGES += \
 
 # Common init scripts
 PRODUCT_PACKAGES += \
-    ftm_power_config.sh \
     init.class_main.sh \
-    init.cust.rc \
-    init.oem.debug.rc \
     init.oem.rc \
-    init.oem_ftm.rc \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.factory.rc \
@@ -169,9 +165,7 @@ PRODUCT_PACKAGES += \
     init.qti.qcv.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.qcom.rc \
-    vendor.oem_ftm.rc \
-    vendor.oem_ftm_svc_disable.rc
+    ueventd.qcom.rc
 
 # Display
 PRODUCT_PACKAGES += \
