@@ -122,7 +122,4 @@ void vendor_load_properties() {
 
   // dalvikvm props
   load_dalvikvm_properties();
-
-  // fingerprint
-  property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint","ro.bootimage.build.fingerprint", "google/coral/coral:11/RQ2A.210305.006/7119741:user/release-keys");
 }
