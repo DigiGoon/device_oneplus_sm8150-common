@@ -324,10 +324,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     device/oneplus/common
 
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # tri-state key
 PRODUCT_PACKAGES += \
     tri-state-key_daemon \
