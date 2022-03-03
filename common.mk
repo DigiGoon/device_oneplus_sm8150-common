@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
 # Audio
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.audio.sdk.fluencetype=fluence \
     persist.vendor.audio.fluence.voicerec=true \
     af.fast_track_multiplier=2 \
@@ -103,7 +103,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor:64 \
     vendor.qti.hardware.btconfigstore@2.0.vendor:64
 
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.oneplus.bt.asd.chain=0 \
     persist.vendor.oneplus.bt.asd.firmware=false \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
@@ -131,12 +131,12 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.camera@1.0.vendor:64 \
     vendor.qti.hardware.camera.device@1.0.vendor:64
 
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.camera.res.fmq.size=1048576 \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.camera
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.camera.res.fmq.size=1048576
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    persist.vendor.camera.privapp.list=com.oneplus.camera
+    persist.vendor.camera.privapp.list=com.oneplus.camera \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.camera
 
 # Charger
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # Crypto
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.crypto.allow_encrypt_override=true \
     ro.crypto.volume.filenames_mode="aes-256-cts" \
     ro.hardware.keystore_desede=true
@@ -170,7 +170,7 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.display@1.0.vendor
 
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
     ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
     ro.vendor.display.ad=1 \
@@ -185,14 +185,14 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     DisplayMode
 
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.dpmhalservice.enable=1
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey
 
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
@@ -207,16 +207,16 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.oneplus \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor:64
 
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qfp=true \
     vendor.boot.fingerprintbstate=orange
 
 # FRP
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Gatekeeper
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     vendor.gatekeeper.disable_spu=true
 
 # GPS
@@ -245,7 +245,7 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
-PRODUCT_ODM_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.camera.notify_nfc=1
 
 # Platform
