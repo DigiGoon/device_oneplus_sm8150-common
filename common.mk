@@ -20,12 +20,19 @@ PRODUCT_PACKAGES += \
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
+AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
 PRODUCT_PACKAGES += \
+    checkpoint_gc \
     otapreopt_script
 
 # Permissions
@@ -158,6 +165,7 @@ PRODUCT_PACKAGES += \
     init.qti.qcv.sh \
     init.recovery.qcom.rc \
     init.target.rc \
+    fstab.qcom \
     ueventd.qcom.rc
 
 # Crypto

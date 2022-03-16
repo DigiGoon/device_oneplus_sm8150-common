@@ -91,3 +91,32 @@ prebuilt_etc {
     src: "ueventd.rc",
     vendor: true,
 }
+
+// fstab
+soong_config_module_type {
+    name: "oneplus_msmnile_rootdir_prebuilt_etc",
+    module_type: "prebuilt_etc",
+    config_namespace: "ONEPLUS_MSMNILE_ROOTDIR",
+    variables: ["PARTITION_SCHEME"],
+    properties: ["src"],
+}
+
+soong_config_string_variable {
+    name: "PARTITION_SCHEME",
+    values: ["dynamic", "non_dynamic"],
+}
+
+oneplus_msmnile_rootdir_prebuilt_etc {
+    name: "fstab.qcom",
+    soong_config_variables: {
+        PARTITION_SCHEME: {
+            dynamic: {
+                src: "etc/fstab.qcom",
+            },
+            non_dynamic: {
+                src: "etc/fstab_non_dynamic.qcom",
+            },
+        },
+    },
+    vendor: true,
+}
