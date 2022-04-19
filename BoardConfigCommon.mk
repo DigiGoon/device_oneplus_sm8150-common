@@ -60,6 +60,9 @@ endif
 TARGET_USES_FOD_ZPOS := true
 TARGET_SURFACEFLINGER_UDFPS_LIB := //device/oneplus/common:libudfps_extension.oneplus
 
+# Vulkan HWUI
+TARGET_USES_VULKAN = true
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(VENDOR_PATH)/configs/vintf/oneplus_vendor_framework_compatibility_matrix.xml
