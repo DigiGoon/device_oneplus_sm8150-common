@@ -273,6 +273,11 @@ TARGET_COMMON_QTI_COMPONENTS := \
     usb \
     wfd
 
+# USB
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.usb.diag.func.name=diag \
+    vendor.usb.use_ffs_mtp=0
+
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.oneplus
