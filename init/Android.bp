@@ -80,6 +80,7 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.oneplus.usb.rc",
     src: "etc/init.oneplus.usb.rc",
+    sub_dir: "init",
     vendor: true,
 }
 
