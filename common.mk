@@ -289,6 +289,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.usb.diag.func.name=diag \
     vendor.usb.use_ffs_mtp=0
 
+# Enable incrementalfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.incremental.enable=yes
+
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.oneplus
