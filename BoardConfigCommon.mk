@@ -36,8 +36,16 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_SOURCE := kernel/msm-4.14
 KERNEL_DEFCONFIG := vendor/sm8150-perf_defconfig
 KERNEL_CUSTOM_LLVM := true
+TARGET_KERNEL_CLANG_VERSION := rui
+KERNEL_SUPPORTS_LLVM_TOOLS := true
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang-standalone
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    DTC_EXT=$(shell pwd)/out/host/$(HOST_OS)-x86/bin/dtc \
+    LLVM=1 AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LD=ld.lld
 
 # A/B
 AB_OTA_UPDATER := true
